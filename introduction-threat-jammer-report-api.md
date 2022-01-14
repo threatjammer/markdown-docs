@@ -1,6 +1,6 @@
 ---
-title: 'What is a Threat Jammer?'
-excerpt: 'A short introduction to the Threat Jammer service.'
+title: 'Introduction to Threat Jammer Report API'
+excerpt: 'Developers can use the Report API to automate the reporting of malicious resources asynchronously.'
 coverImage: ''
 created: '2021-01-12'
 updated: '2021-01-12'

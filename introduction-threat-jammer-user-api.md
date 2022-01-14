@@ -1,6 +1,6 @@
 ---
-title: 'What is a Threat Jammer?'
-excerpt: 'A short introduction to the Threat Jammer service.'
+title: 'Introduction to Threat Jammer User API'
+excerpt: 'Developers can use the User API interact with the different databases, heuristics and machine learning processes.'
 coverImage: ''
 created: '2021-01-12'
 updated: '2021-01-12'

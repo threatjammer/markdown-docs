@@ -1,6 +1,6 @@
 ---
-title: 'What is a Threat Jammer?'
-excerpt: 'A short introduction to the Threat Jammer service.'
+title: 'Threat Jammer tokens'
+excerpt: 'The Tokens are the key to access the service.'
 coverImage: ''
 created: '2021-01-12'
 updated: '2021-01-12'
