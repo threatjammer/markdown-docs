@@ -19,12 +19,20 @@ ogImage:
 
 1. [What is Threat Jammer?](/docs/what-is-threat-jammer "What is Threat Jammer?")
 
-This guide explains how to use Threat Jammer and sleash its potential.
+This guide explains what is Threat Jammer and how to unleash its potential.
 
-2. [Introduction to the User API](/docs/introduction-user-api "Introduction to the User API")
+2. [Threat Jammer tokens](/docs/threat-jammer-tokens "Threat Jammer tokens")
+
+To use Threat Jammer tokens, you need to create a token. Learn how to do it and its caracteristics.
+
+3. [Introduction to the User API](/docs/introduction-user-api "Introduction to the User API")
 
 How to use the User API to interact with Threat Jammer.
 
-2. [Introduction to the Report API](/docs/introduction-report-api "Introduction to the Report API")
+4. [Introduction to the Report API](/docs/introduction-report-api "Introduction to the Report API")
 
 How to use the Report API to let devices interact with Threat Jammer.
+
+5. [Threat Jammer site](/docs/threat-jammer-site "Threat Jammer site")
+
+The Threat Jammer website is a web application that allows you to interact with Threat Jammer User API.
