@@ -25,11 +25,11 @@ This guide explains what is Threat Jammer and how to unleash its potential.
 
 To use Threat Jammer tokens, you need to create a token. Learn how to do it and its caracteristics.
 
-3. [Introduction to the User API](/docs/introduction-user-api "Introduction to the User API")
+3. [Introduction to the Threat Jammer User API](/docs/introduction-threat-jammer-user-api "Introduction to the Threat Jammer User API")
 
 How to use the User API to interact with Threat Jammer.
 
-4. [Introduction to the Report API](/docs/introduction-report-api "Introduction to the Report API")
+4. [Introduction to the Threat Jammer Report API](/docs/introduction-threat-jammer-report-api "Introduction to the Threat Jammer Report API")
 
 How to use the Report API to let devices interact with Threat Jammer.
 
