@@ -17,9 +17,7 @@ ogImage:
   url: ''
 ---
 
-## How Threat Jammer works
-
-### REST API: A single point of contact
+## REST API: A single point of contact
 
 The Threat Jammer [User REST API](/docs/introduction-threat-jammer-user-api) is a single point of contact for all the different threat detection services. It allows you to consume the threat intelligence data from other sources and integrate it into your application. We designed the API to lower the entry barrier as much as possible to facilitate the integration of the threat intelligence data into your application, other threat intel services, and even already existing applications that already support our API.
 
@@ -27,7 +25,7 @@ The API needs a Key to work. Anybody can obtain a key from the [Threat Jammer si
 
 > **Note: The service only supports one region and one API Key per region in this version. Future versions will allow more advanced configurations.** 
 
-### OSINT databases
+## OSINT databases
 
 Open Source Intelligence is a crucial ingredient of any threat intel strategy. The value of Threat Jammer is not just to gather all the different sources and integrate them into a single point of contact. The most relevant value is  **categorize them and rank the datasets according to a pre-calculated risk score obtained using different techniques and algorithms transparent to the user.**
 
@@ -35,26 +33,26 @@ The Scoring Engine categorizes every dataset in Threat Jammer with an integer fr
 
 The Data Gathering Engine is responsible for gathering the OSINT data from different sources. Depending on how frequently the data changes at the origin, the engine will instantly update the datasets in all the regions. Hence, the users will always have access to the freshest and most accurate data with the most updated risk score. The users do not need to care about how these processes work.
 
-### CSINT databases
+## CSINT databases
 
 Closed Source Intelligence is an ingredient that increases the quality of any threat intel strategy results. The highest quality and more reliable datasets are often obtained from custom-built extraction processes or directly acquired to external data providers for a fee. Following the same strategy of freshness and accuracy as the OSINT databases, the CSINT databases increase the capacity of our Assessment Engine to detect malicious activity.
 
 We at Threat Jammer obtain some of the datasets available by paying a fee to the data providers—others with ad-hoc extraction processes. The CSINT databases are only available to paying subscribers in the Assessment Engine. Using CSINT datasets increases the risk score's accuracy and reduces the false positives.
 
-### Heuristic Analysis
+## Heuristic Analysis
 
 Heuristic Analysis -or rule-based analysis- is a very effective threat intel tool that, combined with rich and accurate data from the OSINT and CSINT databases—can detect malicious activity. This algorithmic approach is part of the existing set of Threat Jammer services.
 
 Threat Jammer can calculate a more precise risk score in the Assessment Engine using the heuristic analysis with the help of OSINT and CSINT datasets. Moreover, it can be customized to obtain a risk score for a specific menace when applying dataset-specific searches would bypass the threat. 
 
-### Machine Learning
+## Machine Learning
 
 The amount of data available in the Threat Jammer backend is massive. We have enough data to train different machine learning models to detect malicious activity. Threat Jammer uses the data obtained from OSINT and CSINT sources and the users' behavior, heuristic analysis, and automatic data report to train machine learning models.
 
 The Assessment Engine can use these pre-trained models as another predictive analysis tool to detect malicious activity and return a risk score based on the results. Adding a pre-trained model to the Threat Jammer system is a great way to increase the accuracy of the risk score and reduce the false positives.
 
 
-### Crowdsourced Intelligence
+## Crowdsourced Intelligence
 
 Crowdsourced Intelligence means that our users can report their data to the Threat Jammer system. When users feed Threat Jammer with their data using the [Report API](/docs/introduction-threat-jammer-report-api), they increase the chance of finding malicious activity and reducing the false positives. 
 

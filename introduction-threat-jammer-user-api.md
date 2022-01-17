@@ -18,8 +18,5 @@ ogImage:
 ---
 
 ## Introduction
-This is test
 
-## HELLO
-This is a test
-
+Threat Jammer supports two end-user REST APIs: the User API and the Report API. The end-user uses the User API to interact with the different databases, heuristics, and machine learning processes. Devices use the Report API to interact with Threat Jammer. This document will explain how to use the User API and how to interact with the different services, create a token, interpret the quota information, and create the HTTP request to interact with the User API.
