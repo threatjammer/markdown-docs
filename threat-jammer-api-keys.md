@@ -29,6 +29,8 @@ The current version of Threat Jammer supports only one API key per user in the o
 
 This page is only available for users who have registered in Threat Jammer. **So, if you are not a user yet, you can create an API key on the [Threat Jammer website](https://threatjammer.com/api/signup).** The signup is free, and we don't take any personal information or the payment method. 
 
+![Threat Jammer API Key menu](/img/api-keys-menu.png)
+
 After the signup, the user will enjoy 30 days of trial. After that, the user can opt for a paid plan. The paid plan is available on the [Threat Jammer plans page](https://threatjammer.com/plans). If not, Threat Jammer will downgrade the user to the free plan. It's possible to upgrade to a paid plan at any time.
   
 ## The API key format
@@ -171,7 +173,11 @@ The response will be a JSON object with all the fields described in [The quota v
 
 Each User API endpoint has a live testing site at `https://REGION.api.threatjammer.com/docs`. The live testing site lets developers test the User API with their API keys and verify how things work beforehand. Each region has its live testing site, so the developer has to change the `REGION` part of the fully qualified domain name according to the region of your API key. Then, they can open the URL in any browser and start testing the User API.
 
+![Threat Jammer Live Test Authorize button](/img/test-live-authorize.png)
+
 As described above, a Bearer token protects all the endpoints of the User API. Each of the endpoints in the API show an **open lock** at the right-hand side. To close the lock and test all the endpoints, the developer has to click on the **Authorize** green button at the top of the page. A form with a single textbox will appear. The developer must enter the API key (only the API key, without the `Bearer` prefix) and click on the **Authorize** button. The locks will close, and the developer can start testing any User API endpoint.
+
+![Threat Jammer Live Test API Key token info](/img/api-keys-token-info.png)
 
 Search for the endpoints named `Token management in this region` and try the only endpoint `/v1/token` available. The response will be the JSON object with all the fields described in [The quota values section](#the-quota-values).
 
