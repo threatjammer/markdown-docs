@@ -51,6 +51,84 @@ The Threat Jammer site also has a direct access from the dropdown menu:
 
 ## API version
 
+The User API follows a [semantic versioning](https://semver.org/) schema. Given a version number MAJOR.MINOR.PATCH, increment the:
+
+1. MAJOR version when the User API has incompatible changes,
+2. MINOR version when we add functionality in a backward-compatible manner, and
+3. PATCH version when we make backward-compatible bug fixes.
+
+We don't use additional labels in production environments. 
+
+The current MAJOR version is `1`. You can read the current versions at the top of the page closer to the page's title and in the URI of all the endpoints available.
+
+![Threat Jammer API version](/docsimg/user-api-version.png)
+
+## Building a HTTP request to the API 
+
+All the User API endpoints will need the following pieces of information to build a request:
+
+1. The API key. Please learn how to obtain it in the previous chapter [Threat Jammer API keys](/docs/threat-jammer-api-keys).
+2. The region. The region is API-specific. 
+3. The version of the API. Currently, it can only be `v1`.
+4. Add the HTTP header `'accept: application/json'`.
+5. The verb of the endpoint: `POST`, `GET`, `PUT` or `DELETE`.
+6. The endpoint with the desired service.
+7. The requests with `GET` and `DELETE` verbs will have parameters in the Querystring.
+8. The requests with `POST` and `PUT` verbs will include the parameters as a JSON object in the request's body.
+ 
+Example: Read the ASN information of Google in the region of `Paris` with the API version `v1`. The endpoint is `/asn/{number}` with a `GET` verb. The [full detail of the endpoint is in the documentation of the Live Test site](https://paris.api.threatjammer.com/docs#/Autonomous%20Systems%20information/query_asn_v1_asn__number__get).
+
+```
+curl -X 'GET' \
+  'https://paris.api.threatjammer.com/v1/asn/15169' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+```
+
+If the request succeeds, the service will return an HTTP code 200 and a JSON object with the information. For a complete description of the JSON object, read the documentation in the Live Test site.
+
+```json
+{
+  "self":"/v1/asn/15169",
+  "name":"GOOGLE",
+  "description":"",
+  "country_code":"US",
+  "registry_date":"20000330",
+  "registry":"/v1/asn/registry/arin",
+  "status":"/v1/asn/status/assigned",
+  "prefixes":"/v1/asn/15169/prefixes",
+  "score":0,
+  "risk":"LOW"
+}
+```
+
+## Overall description of the HTTP responses
+
+### Succesful responses.
+
+Valid responses can only be 200 HTTP OK codes. All the responses will carry a payload in different formats. JSON will be the default format, and other formats allowed are in the endpoint documentation. Some endpoints allow CSV and customized formats for AWS, for example.
+
+The JSON object can contain four different types of values:
+
+- the `self` reference to the object. It plays the role of a unique ID.
+- references to other objects reachable thanks to other API calls to other endpoints. In our example, the list of prefixes of the ASN is a different endpoint.
+- Values as strings, integers, or floats. 
+- A nested array of JSON objects.
+
+### Error responses
+
+All handled error responses will return a 4xx HTTP error code. It will also produce a JSON object with the following structure:
+
+```JSON
+{
+  "title": SHORT_DESCRIPTION_OF_THE_ERROR,
+  "detail": MORE_DETAILS_ABOUT_THE_ERROR,
+  "type:": LINK_TO_A_LONGER_DESCRIPTION_OF_THE_ERROR
+}
+```
+
+Unhandled error responses will probably return an exception and a stack dump. Please report them to our support team.
+
 ## Groups
 
 ### 1
