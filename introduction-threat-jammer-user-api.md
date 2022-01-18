@@ -46,7 +46,7 @@ All the endpoints have a Live Test page where developers can test all the differ
 
 The Threat Jammer site also has a direct access from the dropdown menu:
 
-![Threat Jammer Test Live menu access](docsimg/test-live-menu.png)
+![Threat Jammer Test Live menu access](/docsimg/test-live-menu.png)
 
 
 ## API version
