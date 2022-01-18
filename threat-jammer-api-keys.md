@@ -136,6 +136,7 @@ There are two ways to read the consumed and quotas limits:
 2. Use the User API directly.
 3. Use the User API from the live testing endpoint.
 
+
 Visiting the site is the most straightforward way to read the consumed and quotas limits of the API keys, and it does not need any explanation. 
 
 ![Threat Jammer API keys page](/docsimg/api-keys-page.png)
