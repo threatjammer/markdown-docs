@@ -138,6 +138,9 @@ There are two ways to read the consumed and quotas limits:
 
 Visiting the site is the most straightforward way to read the consumed and quotas limits of the API keys, and it does not need any explanation. 
 
+![Threat Jammer API keys page](/docsimg/api-keys-page.png)
+
+
 ### The User API
 
 The User API is the most convenient way to read the consumed and quotas limits with full detail. In our example, Threat Jammer created the API key in the `aws-eu-west-3` region, so the fully qualified domain name of the URL will be `paris.api.threatjammer.com`.
