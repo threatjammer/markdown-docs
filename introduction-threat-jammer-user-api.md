@@ -8,7 +8,7 @@ readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-user-api.md
   home: /docs/index
-  previous: /docs/threat-jammer-tokens
+  previous: /docs/threat-jammer-api-keys
   next: /docs/introduction-threat-jammer-report-api
 authors:
   - name: Diego Parrilla

@@ -25,9 +25,9 @@ This guide explains what is Threat Jammer and how to unleash its potential.
 
 A high level overview of the different services and how they work together.
 
-3. [Threat Jammer tokens](/docs/threat-jammer-tokens "Threat Jammer tokens")
+3. [Threat Jammer API keys](/docs/threat-jammer-api-keys "Threat Jammer API keys")
 
-To use Threat Jammer tokens, you need to create a token. Learn how to do it and its caracteristics.
+To use Threat Jammer API keys, you need to create them first. Learn how to do it and its caracteristics.
 
 4. [Introduction to the Threat Jammer User API](/docs/introduction-threat-jammer-user-api "Introduction to the Threat Jammer User API")
 

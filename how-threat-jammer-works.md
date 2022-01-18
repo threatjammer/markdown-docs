@@ -9,7 +9,7 @@ navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/how-threat-jammer-works.md
   home: /docs/index
   previous: /docs/what-is-threat-jammer
-  next: /docs/threat-jammer-tokens
+  next: /docs/threat-jammer-api-keys
 authors:
   - name: Diego Parrilla
     link: 'https://github.com/orgs/threatjammer/people/diegoparrilla'
