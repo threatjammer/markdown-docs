@@ -104,15 +104,15 @@ If the request succeeds, the service will return an HTTP code 200 and a JSON obj
 
 ## Overall description of the HTTP responses
 
-### Succesful responses.
+### Succesful responses
 
-Valid responses can only be 200 HTTP OK codes. All the responses will carry a payload in different formats. JSON will be the default format, and other formats allowed are in the endpoint documentation. Some endpoints allow CSV and customized formats for AWS, for example.
+Valid responses can only be a 200 HTTP OK code. All the responses will carry a payload in different formats. JSON will be the default format, and other formats allowed are in the endpoint documentation. Some endpoints allow CSV and customized formats for AWS, for example.
 
 The JSON object can contain four different types of values:
 
 - the `self` reference to the object. It plays the role of a unique ID.
 - references to other objects reachable thanks to other API calls to other endpoints. In our example, the list of prefixes of the ASN is a different endpoint.
-- Values as strings, integers, or floats. 
+- Values as strings, integers, or floats.
 - A nested array of JSON objects.
 
 ### Error responses

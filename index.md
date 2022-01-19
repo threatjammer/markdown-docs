@@ -40,3 +40,6 @@ How to use the Report API to let devices interact with Threat Jammer.
 6. [Threat Jammer site](/docs/threat-jammer-site "Threat Jammer site")
 
 The Threat Jammer website is a web application that allows you to interact with Threat Jammer User API.
+
+7. [Annex: List of handled API errors](/docs/error-index "Annex: List of handled API errors")
+
