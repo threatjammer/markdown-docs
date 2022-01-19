@@ -129,12 +129,174 @@ All handled error responses will return a 4xx HTTP error code. It will also prod
 
 Unhandled error responses will probably return an exception and a stack dump. Please report them to our support team.
 
-## Groups
+## Service Groups
 
-### 1
-### 2
-### 3
-### 4
-### 5
-### 6
+The number of different endpoints available in the User API are constantly growing. They have been grouped by common use cases. 
+
+![Threat Jammer User API endpoint groups](/docsimg/user-api-groups.png)
+
+### Data assesment
+
+[The Data assessment endpoints](https://paris.api.threatjammer.com/docs#/Data%20assesment) in this group answer the following questions:
+
+> How risky is a resource and why?
+
+The different endpoints process the resources and return the highest risk found in why a specific test is relevant. 
+
+**Example:** [Get the risk score and the different factors of an IP address](https://paris.api.threatjammer.com/docs#/Data%20assesment/assess_ip_v1_asses_ip__ip_address__get).
+
+From the command-line:
+```bash
+curl -X 'GET' \
+  'https://paris.api.threatjammer.com/v1/asses/ip/212.231.12.22' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer tja_ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'
+```
+
+From the Live Test site:
+![Threat Jammer User API Assess](/docsimg/user-api-assess.png)
+
+
+
+the JSON object returned:
+
+```JSON
+{
+  "self": "/v1/assess/ip/212.231.12.22",
+  "score": 70,
+  "risk": "MEDIUM",
+  "datasets": [
+    "/v1/dataset/ip/FORUM_ACCOUNT_ABUSE"
+  ],
+  "sources": [
+    "/v1/source/ip/STOPFORUMSPAM_TOXIC/range/7D"
+  ],
+  "first_appearance": [
+    "/v1/log/ip/id/3394366"
+  ],
+  "last_appearance": [
+    "/v1/log/ip/id/4249652"
+  ],
+  "asn": "/v1/asn/15704",
+  "asn_prefix": "/v1/asn/prefix/212.231.0.0.0%252F16",
+  "reason": "Found in one or more denylist datasets.",
+  "reported": "",
+  "denylisted": "",
+  "allowlisted": "",
+  "datacenter": ""
+}
+```
+
+The computed risk score obtained is `70` with a `MEDIUM` risk because the Assessment Engine found the IP address in a denylist database. This information can give the user enough confidence to make an informed decision at their side.
+
+Suppose the user wants to go deeper into the assessment decision process. In that case, it can query the information about:
+- what datasets were affected
+- the name of the denylists
+- when IP addresses appeared
+- the Autonomous System
+- the Datacenter provider
+- if the user reported it
+- or if the user entered the IP address in private deny or allow lists.
+
+The developer will have to follow the links given and build a larger picture of the potential threat to access this information.
+
+There are endpoints that allow batch processing of the resources posting a large JSON object or a CVS file.
+
+### Data logging
+
+[The Data logging endpoints](https://paris.api.threatjammer.com/docs#/Data%20logging) in this group give insights about when a resource appeared in the database or when it left the database. 
+
+This list of changes is an influential factor in the risk score calculation. It's also a piece of valuable information in threat intel, forensics, and data analysis.
+
+Datasets can filter the information returned by the endpoint and the first date found. 
+
+### Autonomous System information
+
+[The Autonomous System information endpoints](https://paris.api.threatjammer.com/docs#/Autonomous%20Systems%20information) has information about the prefixes of the internet AS providers plus a pre-calculated risk score based on the activity of the networks and the frequency of report of the IP addresses in suspicious activities.
+
+The AS has a risk and score pre-calculated, and each IPv4 and IPv6 prefix found have also a pre-calculated risk and score for a fine-grained assessment.
+
+### Datacenter Information
+[The Datacenter information endpoints](https://paris.api.threatjammer.com/docs#/Datacenter%20information) have information about datacenter-only networks ranges and their owners. Following the AS approach, it also has a pre-calculated risk score based on the activity of the networks and the frequency of reports of the IP addresses in suspicious activities. 
+
+The Datacenter has risks and scores pre-calculated, and each IPv4 and IPv6 network found has a pre-calculated risk and score for a fine-grained assessment. 
+
+AS and Datacenter endpoints can look the same but are not the same. Sometimes the risk factors can be the same, but they should be interpreted as different signals.
+
+### Platform datasets
+
+[The Platform datasets endpoints](https://paris.api.threatjammer.com/docs#/Platform%20datasets) is a superset of different sources of data that Threat Jammer classify by the type of suspicious activity they perform. Examples of Platform Datasets are:
+
+- **ABUSE**: IP addresses reported abusive actions.
+- **ANONYMOUS_PROXY**: Anonymous Proxy providers.
+- **ANONYMOUS_VPN**: Anonymous VPN providers.
+- **BOGONS**: IP addresses and CIDRs of BOGONS.
+- **FORUM_ACCOUNT_ABUSE**: IP addresses reported abusive actions in public forums.
+- **REPUTATION**: IP addresses reported malicious actions.
+- **TOR**: Tor, The Onion Router.
+
+### Data sources
+
+[The Data sources endpoints](https://paris.api.threatjammer.com/docs#/Data%20sources) return information about OSINT or CSINT denylists that Threat Jammer uses to calculate the risk and score in the assessment processes.
+
+Threat Jammer picks several relevant time frames for each Data source depending on how frequently the data changes. It can range from 1 hour to 365 days. A Data source with a 1-hour time range will contain the resources found in the last hour. A Data source with 365 days time range will include the resources found in the last 365 days. The time ranges are:
+
+- 1H: Last hour
+- 6H: Last six hours
+- 12H: Last 12 hours
+- 1D: Last 24 hours
+- 7D: Last seven days
+- 30D: Last 30 days
+- 90D: Last 90 days
+- 180D: Last 180 days
+- 365D: Last 365 days
+
+Other relevant information about the Data sources are:
+- The Dataset it belongs to.
+- Where it was found.
+- How often does it change.
+- The minimum risk and score in the time range.
+- The maximum risk and score in the time range.
+
+### Denylist data query and management
+
+[Denylist data query and management](https://paris.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management) lets users manage their private denylists of resources. **The Assessment Engine will classify the resource with the maximum risk and score if there is a match during the assessment process. Maximium risk.** 
+
+There are two different sets of features:
+
+1. Reported IP quey and data management
+2. Private denylist IP query and data management
+
+A user can only insert into the Reported IP addresses storage from the [Report API](/docs/introduction-threat-jammer-report-api.md). The Report API design allows fast asynchronous communication from external devices like Honeypots, CDNs with serverless functions, and other threat detection agents that need to publish the information in a non-blocking way. A user can manage these resources with this endpoint.
+
+Thanks to the Private denylist IP query and data management, a user can insert, update, delete or retrieve any IP address using the API. Threat Jammer will handle this set differently from the Reported IP addresses.
+
+### Allowlist data query and management
+
+[Allowlist data query and management](https://paris.api.threatjammer.com/docs#/Allowlist%20data%20query%20and%20management) lets users manage their private allowlist of resources. **The Assessment Engine will classify the resource with the lowest risk and score if there is a match during the assessment process. All the assessment processes will stop if the resource is in the whitelist discarding any other factors.**
+
+A user can insert, update, delete or retrieve any IP address using the API. 
+
+### Public Allowlist data query and management
+
+[Public allowlist data query and management]() lets users manage what public datasets of resources will not take part in the assessment process of the Assessment Engine. 
+
+Thanks to this feature, a company could bypass any kind of assessment of the traffic coming from:
+- Apple Private Relay
+- Google Bots
+- Tor
+- etc.
+
+### Geolocation
+
+[Geolocation](https://paris.api.threatjammer.com/docs#/Geolocation) lets users obtain an accurate location of an IP address. It also allows batch processing or CVS file upload.
+
+
+## What's next
+
+We recommend starting testing our API in the [Live Test site](https://paris.api.threatjammer.com/docs) first, and then read some of the [Tutorials available](/tutorials) in our site to get a better understanding of all the capabilities of the service.
+
+Visiting the [community site](/community) is also an excellent place to ask for help, or our [support services](/support)
+
+
 
