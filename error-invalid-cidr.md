@@ -18,3 +18,6 @@ ogImage:
 ---
 
 The CIDR passed as argument does not have a valid format or is a forbiddden range.
+
+
+*If you need help you can try first in our [community site](/community), or our [support services](/support)*

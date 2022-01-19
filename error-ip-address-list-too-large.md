@@ -17,4 +17,7 @@ ogImage:
   url: ''
 ---
 
-The size of the list passed as argument is too large. 
+The size of the list passed as argument is too large.
+
+
+*If you need help you can try first in our [community site](/community), or our [support services](/support)*

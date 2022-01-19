@@ -18,3 +18,6 @@ ogImage:
 ---
 
 The IP address passed as argument does not have a valid format or the IP address is forbidden.
+
+*If you need help you can try first in our [community site](/community), or our [support services](/support)*
+

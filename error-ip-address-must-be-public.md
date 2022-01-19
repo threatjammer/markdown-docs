@@ -18,3 +18,6 @@ ogImage:
 ---
 
 The service only accepts Public IP addresses.
+
+
+*If you need help you can try first in our [community site](/community), or our [support services](/support)*

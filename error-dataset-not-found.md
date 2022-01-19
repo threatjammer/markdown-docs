@@ -18,3 +18,6 @@ ogImage:
 ---
 
 The user tries to access a Dataset that does not exists or does not have enough permissions to use it.
+
+
+*If you need help you can try first in our [community site](/community), or our [support services](/support)*

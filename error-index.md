@@ -1,6 +1,6 @@
 ---
 title: 'List of handled errors in the Report and User API'
-excerpt: 'This list covers all the handled errors when using the different API available.'
+excerpt: 'This list covers all the handled errors when using the different API available, in alphabetical order.'
 coverImage: ''
 created: '2021-01-12'
 updated: '2021-01-12'
@@ -17,8 +17,6 @@ ogImage:
   url: ''
 ---
 
-The list of errors by alphabetic order:
-
 - [Combined IP Protocol Not Supported](/docs/error-combined-ip-protocol-not-supported)
 - [Dataset Not Found](/docs/error-dataset-not-found)
 - [Invalid CIDR](/docs/error-invalid-cidr)
@@ -34,3 +32,6 @@ The list of errors by alphabetic order:
 - [Too Many Requests](/docs/error-too-many-requests)
 - [Unauthorized](/docs/error-unauthorized)
 - [Value Should Be Greater Than Zero](/docs/error-value-should-be-greater-than-zero)
+
+
+*If you need help you can try first in our [community site](/community), or our [support services](/support)*

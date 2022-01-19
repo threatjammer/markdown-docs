@@ -18,3 +18,6 @@ ogImage:
 ---
 
 The service cannot return IPv4 and IPv6 at the same time. Choose IPv4 or IPv6, but not both.
+
+
+*If you need help you can try first in our [community site](/community), or our [support services](/support)*
