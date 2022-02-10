@@ -3,7 +3,7 @@ title: 'Threat Jammer API keys'
 excerpt: 'The API Keys are the authorization method to access the service.'
 coverImage: ''
 created: '2021-01-12'
-updated: '2021-01-12'
+updated: '2021-02-10'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/threat-jammer-api-keys.md
@@ -87,10 +87,11 @@ Depending on the subscription type, the quota limits may vary:
 | Subscription type | Monthly Quota |
 | ------------------- | ------ |
 | Free | `5000` |
-| Trial | `10000` |
-| Basic | `30000` |
+| Basic/Trial | `30000` |
 | Premium | `100000` |
 | Enterprise | `5000000` |
+
+> Note: The API is still in beta, so only the `Free` type is available. Other subscription types will be available when the API changes to GA version.
 
 ### The per-minute rate-limit quota
 
@@ -103,10 +104,11 @@ Depending on the subscription type, the rate-limit quota limits may vary:
 | Subscription type | Per minute Quota |
 | ------------------- | ------ |
 | Free | `10` |
-| Trial | `60` |
-| Basic | `300` |
+| Basic/Trial | `300` |
 | Premium | `1000` |
 | Enterprise | `5000` |
+
+> Note: The API is still in beta, so only the `Free` type is available. Other subscription types will be available when the API changes to GA version.
 
 ## The Authorization header
 

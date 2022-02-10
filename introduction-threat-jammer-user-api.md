@@ -3,7 +3,7 @@ title: 'Introduction to Threat Jammer User API'
 excerpt: 'Developers can use the User API interact with the different databases, heuristics and machine learning processes.'
 coverImage: ''
 created: '2021-01-12'
-updated: '2021-01-12'
+updated: '2021-02-10'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-user-api.md
@@ -60,6 +60,8 @@ The User API follows a [semantic versioning](https://semver.org/) schema. Given 
 We don't use additional labels in production environments. 
 
 The current MAJOR version is `1`. You can read the current versions at the top of the page closer to the page's title and in the URI of all the endpoints available.
+
+> Note: The User API is in General Availability (GA), but the overall service is still in Beta. So only the `Free` subcription type is available. Other subscription types will be available when the API changes to GA version.
 
 ![Threat Jammer API version](/docsimg/user-api-version.png)
 
@@ -227,13 +229,15 @@ AS and Datacenter endpoints can look the same but are not the same. Sometimes th
 
 [The Platform datasets endpoints](https://paris.api.threatjammer.com/docs#/Platform%20datasets) is a superset of different sources of data that Threat Jammer classify by the type of suspicious activity they perform. Examples of Platform Datasets are:
 
-- **ABUSE**: IP addresses reported abusive actions.
-- **ANONYMOUS_PROXY**: Anonymous Proxy providers.
-- **ANONYMOUS_VPN**: Anonymous VPN providers.
-- **BOGONS**: IP addresses and CIDRs of BOGONS.
-- **FORUM_ACCOUNT_ABUSE**: IP addresses reported abusive actions in public forums.
-- **REPUTATION**: IP addresses reported malicious actions.
-- **TOR**: Tor, The Onion Router.
+| Platform datasets | Description |
+| ------------------- | ------ |
+| `ABUSE` | IP addresses reported abusive actions. |
+| `ANONYMOUS_PROXY` | Anonymous Proxy providers. |
+| `ANONYMOUS_VPN` | Anonymous VPN providers. |
+| `BOGONS` | IP addresses and CIDRs of BOGONS. |
+| `FORUM_ACCOUNT_ABUSE` | IP addresses reported abusive actions in public forums. |
+| `REPUTATION` | IP addresses reported malicious actions. |
+| `TOR` | Tor, The Onion Router. |
 
 ### Data sources
 
@@ -241,15 +245,17 @@ AS and Datacenter endpoints can look the same but are not the same. Sometimes th
 
 Threat Jammer picks several relevant time frames for each Data source depending on how frequently the data changes. It can range from 1 hour to 365 days. A Data source with a 1-hour time range will contain the resources found in the last hour. A Data source with 365 days time range will include the resources found in the last 365 days. The time ranges are:
 
-- 1H: Last hour
-- 6H: Last six hours
-- 12H: Last 12 hours
-- 1D: Last 24 hours
-- 7D: Last seven days
-- 30D: Last 30 days
-- 90D: Last 90 days
-- 180D: Last 180 days
-- 365D: Last 365 days
+| Time ranges| Description |
+| ---------- | ----- |
+| `1H` | Last hour |
+| `6H` | Last six hours |
+| `12H` | Last 12 hours |
+| `1D` | Last 24 hours |
+| `7D` | Last seven days |
+| `30D` | Last 30 days |
+| `90D` | Last 90 days |
+| `180D` | Last 180 days |
+| `365D` | Last 365 days |
 
 Other relevant information about the Data sources are:
 - The Dataset it belongs to.
