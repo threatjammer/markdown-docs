@@ -3,7 +3,7 @@ title: 'Introduction to Threat Jammer Report API'
 excerpt: 'Developers can use the Report API to automate the reporting of malicious resources asynchronously.'
 coverImage: ''
 created: '2021-01-12'
-updated: '2021-02-22'
+updated: '2021-02-23'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-report-api.md
@@ -215,7 +215,12 @@ The Report API is deployed in different regions and each region can only be acce
 
 ## Understanding the Report API quotas
 
-The Report API is free to use and it does not impact on the quotas of the User API. A user can report as many resources as needed and the User quota will not decrease. Even an API Key with the User quota exhausted can be used to report resources. Each regional Report API endpoint has a limit of `6` hits per minute. We recommend to group several requests on a ten seconds interval and then invoke the API endpoints.
+**The Report API is free to use and it does not impact on the quotas of the User API**. A user can report as many resources as needed and the User quota will not decrease. Even an API Key with the User quota exhausted can be used to report resources. Each regional Report API endpoint has a limit of `6` hits per minute. We recommend to group several requests on a ten seconds interval and then invoke the API endpoints.
+
+## Downloading the reported IP addresses
+
+ThreatJammer is only a custody of your data, so you can download the reported IP addresses in JSON, CSV or [AWS WAF format](https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html) and import them in your own systems. The endpoints in the User API to download the reported IP addresses are [`/denylist/reported/ip`](https://paris.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management/query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_get) and [`/allowlist/cidr`](https://paris.api.threatjammer.com/docs#/Allowlist%20data%20query%20and%20management/query_all_the_ip_addresses_manually_entered_by_the_user_in_the_IP_addresses_allowlist_v1_allowlist_cidr_get).
+
 
 ## What's next
 
