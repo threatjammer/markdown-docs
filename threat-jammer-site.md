@@ -23,7 +23,7 @@ ogImage:
 
 The ThreatJammer website is a web application that allows the management of the user account and the different API Keys in the different regions. Plus, the website has a search engine and a dashboard (the cockpit) that permits to see the different reports of the information obtained from the API. The main purpose of this dashboard is to provide a quick overview of the result of the risk assessment process without the need to use the REST API. 
 
-## Risk assessment without being registered
+## Risk assessment without being registered (anonymous search)
 
 ### Search query 
 The website can perform a risk assessment without being registered. When a user enters an IP address, the website will perform a risk assessment and return the risk level of the IP address in a visual way. It will also return information about the Autonomous Systems (AS) that are associated to the IP address.
@@ -74,3 +74,5 @@ The site will open a new window for each social network and it will show a summa
 
 ### Assessment details
 The website can also display to registered users multiple details of the IP address from different sources. The user needs to be logged in to see  the details. A user can sign up for a free account in the website and then the user can see the details of the IP address. You can sign up now clicking on the **Sign up** button at any time.
+
+### Risk assessment with a registered user
