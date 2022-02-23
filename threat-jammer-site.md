@@ -44,8 +44,6 @@ A registered user can ban or report a False Positive IP address. The buttons are
 
 ### Risk found
 The website will also display what type of risk was found based on the information returned by the User API. It will display the information as follows:
-- Low risk: Green bar with the message **No risk found**.
-- 
 
 | Risk level | Displays |
 |-------|------------|
@@ -72,4 +70,7 @@ The website will also display the social buttons that will allow the user to sha
 
 The site will open a new window for each social network and it will show a summary of the information obtained. For example, the Twitter button will show the following information:
 
-![Threat Jammer Twitter Risk Assessment](/docsimg/risk-assessment-twitter.png | width=300)
+![Threat Jammer Twitter Risk Assessment](/docsimg/risk-assessment-twitter.png)
+
+### Assessment details
+The website can also display to registered users multiple details of the IP address from different sources. The user needs to be logged in to see  the details. A user can sign up for a free account in the website and then the user can see the details of the IP address. You can sign up now clicking on the **Sign up** button at any time.
