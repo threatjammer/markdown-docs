@@ -1,9 +1,9 @@
 ---
 title: 'Threat Jammer website'
-excerpt: 'The Threat Jammer website is a web application that allows manage basic features of the service.'
+excerpt: 'The Threat Jammer site is a web application that allows anyone to query resources and manage some basic features.'
 coverImage: ''
 created: '2021-01-12'
-updated: '2021-01-12'
+updated: '2021-02-24'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/threat-jammer-site.md
@@ -186,4 +186,58 @@ There is also a link to a map showing the location of the IP address. We don't e
 
 ## Signup and Login
 
-## API Key Management
+### Sign up page
+To obtain an API key, the developer must sign up at the [Signup page](/api/signup) of the website. Users can create an account with:
+
+- An email and a password.
+- A Github account.
+- A Google account.
+- A Microsoft account.
+
+> **Note: By registering with the email/password or any of the social providers, the users must agree with the [Privacy Policy](https://threatjammer.com/privacy) and the [Terms of Service](https://threatjammer.com/tos).**
+
+![Threat Jammer Signup Page](/docsimg/signup-page.png)
+
+### Verify account
+If the user sign up with an email and password, they must verify their email address before being able access. The user will receive an email with a link to verify the email address and the following page:
+
+![Threat Jammer Signup Verify Page](/docsimg/signup-verify.png)
+
+The email to verify the account is sent to the email address used to sign up:
+
+![Threat Jammer Signup Verify Email](/docsimg/signup-verify-email.png)
+
+If the user does not verify the email in 24 hours, the account will be deleted.
+
+> **Note: By registering with any of the social providers, we assume that you have already verified your identity and we will not display any verification step.**
+
+### The Quickstart page
+The [Quickstart page](/quickstart) is the page a user see the first time they log in and it is a guide to get started with the Service. The user will also receive the same information in the mailbox. If the user wants to see the Quickstart page again, they can click on the link in the top menu of the page.
+
+![Threat Jammer Signup Quicktsart](/docsimg/signup-quickstart.png)
+
+### The Login page
+
+The user will stay permanently logged in until they log out or not active for 3 days. Regardless of the activity, the users will be forced to login after 30 days. The user can log out by clicking on the [`Logout`](/api/logout) button in the top menu.
+
+
+## Profile account
+
+### User data
+The [Profile account](/profile) page is the page where basic information about the account and the user. To access the profile page, the user must be logged in and click on the dropdown menu at the top right of the page `Profile`.
+
+It contains the following information:
+
+- Nickname and Emal address (information obtained from the Email address).
+- Name and Last name: Empty if the user did not provide it. The social login providers can provide this information.
+- Monthly newsletter: The user can opt-in or opt-out of the monthly newsletter here. By default, the user is opted-out.
+- Quota alerts: The user can opt-in or opt-out of the quota alerts here. By default, the user is opted-in because it's a basic feature of the service. Opting-out will remove the quota alerts from the user's mailbox and will not know when the quota will be reached.
+
+> **Note: We strongly recommend to opt-in for the Monthly newsletter and the Quota alerts.**
+
+![Threat Jammer Profile](/docsimg/profile.png)
+
+### Delete account
+The Delete account button will delete the account and all the data associated with it. The user will be asked to confirm the deletion. After confirming the deletion, it will 24 hours to process the request and 30 days to fully delete the account. During this grace period, the user will not be able to access the account, but the user can request to restore the account to support.
+
+
