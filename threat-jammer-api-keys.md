@@ -23,7 +23,7 @@ Threat Jammer supports two end-user REST APIs: the User API and the Report API. 
 
 ## How to create a token
 
-The current version of Threat Jammer supports only one API key per user in the only existing region in [Paris](https://paris.api.threatjammer.com). When a user register in Threat Jammer, he will automatically receive an *API Key*. The Threat Jammer site has a page with all the information about the *API Keys*:
+The current version of Threat Jammer supports only one API key per user in the only existing region in [Paris](https://dublin.api.threatjammer.com). When a user register in Threat Jammer, he will automatically receive an *API Key*. The Threat Jammer site has a page with all the information about the *API Keys*:
 
 > [`https://threatjammer.com/keys`](https://threatjammer.com/keys)
 
@@ -82,14 +82,11 @@ All the requests to the User API will update the quota if the token is valid and
 
 If the service rejects the request because the quota exceeds the limit, the response will be an HTTP 429 (Too Many Requests). The HTTP response will include a `Retry-After` header with seconds to wait before retrying the request.
 
-Depending on the subscription type, the quota limits may vary:
+During the early phases of the project, the quota will be limited as follows:
 
 | Subscription type | Monthly Quota |
 | ------------------- | ------ |
 | Free | `5000` |
-| Basic/Trial | `30000` |
-| Premium | `100000` |
-| Enterprise | `5000000` |
 
 > Note: The API is still in beta, so only the `Free` type is available. Other subscription types will be available when the API changes to GA version.
 
@@ -99,14 +96,11 @@ To avoid abuse, the User API is rate-limited. The number of requests per minute 
 
 If the service rejects the request because the rate-limit quota exceeds the limit, the response will be an HTTP 429 (Too Many Requests). The HTTP response will include a `Retry-After` header with seconds to wait before retrying the request.
 
-Depending on the subscription type, the rate-limit quota limits may vary:
+During the early phases of the project, the rate-limit will be limited as follows:
 
 | Subscription type | Per minute Quota |
 | ------------------- | ------ |
 | Free | `10` |
-| Basic/Trial | `300` |
-| Premium | `1000` |
-| Enterprise | `5000` |
 
 > Note: The API is still in beta, so only the `Free` type is available. Other subscription types will be available when the API changes to GA version.
 
@@ -146,12 +140,12 @@ Visiting the site is the most straightforward way to read the consumed and quota
 
 ### The User API
 
-The User API is the most convenient way to read the consumed and quotas limits with full detail. In our example, Threat Jammer created the API key in the `aws-eu-west-3` region, so the fully qualified domain name of the URL will be `paris.api.threatjammer.com`.
+The User API is the most convenient way to read the consumed and quotas limits with full detail. In our example, Threat Jammer created the API key in the `aws-eu-west-3` region, so the fully qualified domain name of the URL will be `dublin.api.threatjammer.com`.
 
 Example:
 ```
 curl -X 'GET' \
-  'https://paris.api.threatjammer.com/v1/token' \
+  'https://dublin.api.threatjammer.com/v1/token' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer YOUR_API_KEY'
 ```

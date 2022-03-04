@@ -27,22 +27,19 @@ The Report API (and also the User API) can run in multiple geographical places c
 
 | FQDN | Region | Provider| Enabled? |
 |------|--------|---------|----------|
-| `nuremberg.report.threatjammer.com` | Nuremberg | Hetzner TESTING | Yes |
-| `paris.report.threatjammer.com` | Paris | Amazon Web Services | Yes |
-| `virginia.report.threatjammer.com` | Virginia | Amazon Web Services | No |
-| `california.report.threatjammer.com` | California | Amazon Web Services | No |
+| `dublin.report.threatjammer.com` | Dublin | AWS | Yes |
 
 These regions are **Public**. It means a developer-only needs to obtain an API key when signing up and using the service. **Private Regions** are only available on-demand to selected customers. Don't hesitate to get in touch with sales for more information.
 
 ## Credentials
 
-All the endpoints in the different regions only need a valid API key for the specific region. **The API keys are region-specific**. If a developer tries to use an API key of the `paris.report.threatjammer.com` region in the `virginia.report.threatjammer.com` region or vice versa, it will return an error. Please create a region-specific API key suitable to your needs.
+All the endpoints in the different regions only need a valid API key for the specific region. **The API keys are region-specific**. If a developer tries to use an API key of the `dublin.report.threatjammer.com` region in the `virginia.report.threatjammer.com` region or vice versa, it will return an error. Please create a region-specific API key suitable to your needs.
 
 To learn more about the Authentication with the Bearer tokens, please read the chapter [Threat Jammer API keys](/docs/threat-jammer-api-keys).
 
 ## The Live Test page
 
-All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.report.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Paris, the URL is [https://paris.report.threatjammer.com/docs](https://paris.report.threatjammer.com/docs).
+All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.report.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Paris, the URL is [https://dublin.report.threatjammer.com/docs](https://dublin.report.threatjammer.com/docs).
 
 ## API version
 
@@ -70,11 +67,11 @@ All the Report API endpoints will need the following pieces of information to bu
 6. The endpoint with the desired service.
 7. The requests will include the parameters as a JSON object in the request's body. No query parameters are required.
  
-Example: Report the IP version 4 `6.7.8.9` as malicious and ban it for 24 hours in `Paris` region with the API version `v1`. The endpoint is `/ip` with a `POST` verb. The [full detail of the endpoint is in the documentation of the Live Test site](http://paris.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post).
+Example: Report the IP version 4 `6.7.8.9` as malicious and ban it for 24 hours in `Paris` region with the API version `v1`. The endpoint is `/ip` with a `POST` verb. The [full detail of the endpoint is in the documentation of the Live Test site](http://dublin.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post).
 
 ```
 curl -X 'POST' \
-  'http://paris.report.threatjammer.com/v1/ip' \
+  'http://dublin.report.threatjammer.com/v1/ip' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer YOUR_API_KEY' \
   -H 'Content-Type: application/json' \
@@ -110,11 +107,11 @@ The number of different endpoints available in the Reporting API is smaller than
 
 ### Ban/unban IP addresses. Building denylists automatically.
 
-The endpoints [`/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post) and [`/unban/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post) are used to ban/unban IP addresses. 
+The endpoints [`/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post) and [`/unban/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post) are used to ban/unban IP addresses. 
 
 When a honeypot like [Cowrie](/tutorials/how-to-configure-cowrie-in-ubuntu) or a service like [Fail2Ban](/tutorials/how-to-configure-fail2ban-in-ubuntu) detects a set of malicious IP addresses they can report them thanks to the Report API. The ThreatJammer assessment engine will automatically ban the IP addresses with the Time to Live (TTL) passed as argument **only for the user reporting the IP**. The TTL expires, the service will automatically unban the IP addresses. If more users report the same IP address, the ThreatJammer assessment engine will move the IP address to a public `ban` list called `COMMUNITY_REPORTED_LIST`. 
 
-A developer can also unban IP addresses by using the endpoint [`/unban/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post). This endpoint sets the TTL to `0` forcing an immediate expiration of the IP addresss.
+A developer can also unban IP addresses by using the endpoint [`/unban/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post). This endpoint sets the TTL to `0` forcing an immediate expiration of the IP addresss.
 
 
 **Example:** To ban the IP addresses `6.7.8.9` and `7.8.9.10` for 24 hours (`86400` seconds) in `Paris` region tagging them of type `ABUSE` and tagging them as `DOCSAMPLE`:
@@ -122,7 +119,7 @@ A developer can also unban IP addresses by using the endpoint [`/unban/ip`](http
 From the command-line:
 ```bash
 curl -X 'POST' \
-  'http://paris.report.threatjammer.com/v1/ip' \
+  'http://dublin.report.threatjammer.com/v1/ip' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer tja_ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ' \
   -H 'Content-Type: application/json' \
@@ -143,7 +140,7 @@ the server returns the HTTP code `202`.
 From the command-line:
 ```bash
 curl -X 'POST' \
-  'http://paris.report.threatjammer.com/v1/unban/ip' \
+  'http://dublin.report.threatjammer.com/v1/unban/ip' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer tja_ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ' \
   -H 'Content-Type: application/json' \
@@ -156,16 +153,16 @@ curl -X 'POST' \
 
 the server returns the HTTP code `202`.
 
-Both endpoints enqueue the request to the internal queue. The service will process the request asynchronously. It can take a few seconds before the request is processed in the backend and the IP addresses are banned/unbanned. To check the status of the request, use the User API endpoints [`/denylist/reported/ip/*`](https://paris.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management). It's also possible to manage the reported IP addresses using the User API synchronously.
+Both endpoints enqueue the request to the internal queue. The service will process the request asynchronously. It can take a few seconds before the request is processed in the backend and the IP addresses are banned/unbanned. To check the status of the request, use the User API endpoints [`/denylist/reported/ip/*`](https://dublin.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management). It's also possible to manage the reported IP addresses using the User API synchronously.
 
 
 ### Report false positives IP addresses. Building allowlists automatically.
 
-The endpoints [`/false/add/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/add_ip_addresses_to_the_false_positive_database_v1_false_add_ip_post) and [`/false/remove/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/remove_ip_addresses_from_the_false_positive_database_v1_false_remove_ip_post) are used to create custom allowlists for false positives IP addresses automatically. 
+The endpoints [`/false/add/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/add_ip_addresses_to_the_false_positive_database_v1_false_add_ip_post) and [`/false/remove/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/remove_ip_addresses_from_the_false_positive_database_v1_false_remove_ip_post) are used to create custom allowlists for false positives IP addresses automatically. 
 
 When a user reports a False Positive the service will automatically add it to the **private allowlist** of the user, bypassing any risk assessment. The ThreatJammer assessment engine will ignore the IP addresses during the Time to Live (TTL) passed as argument **only for the user reporting the IP**. When the TTL expires, the service will automatically delete the IP addresses of the allowlist. If more users report the same IP address as a false positive, the ThreatJammer assessment engine will start a reviewing process of the IP address to a public false positive allowlist that will bypass any risk assessment.
 
-A developer can also remove an IP addresses of the allowlist by using the endpoint [`/false/remove/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/remove_ip_addresses_from_the_false_positive_database_v1_false_remove_ip_post). This endpoint sets the TTL to `0` forcing an immediate expiration of the IP addresss.
+A developer can also remove an IP addresses of the allowlist by using the endpoint [`/false/remove/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/remove_ip_addresses_from_the_false_positive_database_v1_false_remove_ip_post). This endpoint sets the TTL to `0` forcing an immediate expiration of the IP addresss.
 
 
 **Example:** To report as a false positive the IP address `8.8.8.8` for 24 hours (`86400` seconds) in `Paris` region tagging them of type `ABUSE` and tagging them as `DOCSAMPLE`:
@@ -173,7 +170,7 @@ A developer can also remove an IP addresses of the allowlist by using the endpoi
 From the command-line:
 ```bash
 curl -X 'POST' \
-  'http://paris.report.threatjammer.com/v1/false/add/ip' \
+  'http://dublin.report.threatjammer.com/v1/false/add/ip' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer tja_ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ' \
   -H 'Content-Type: application/json' \
@@ -194,7 +191,7 @@ the server returns the HTTP code `202`.
 From the command-line:
 ```bash
 curl -X 'POST' \
-  'http://paris.report.threatjammer.com/v1/false/remove/ip' \
+  'http://dublin.report.threatjammer.com/v1/false/remove/ip' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer tja_ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ' \
   -H 'Content-Type: application/json' \
@@ -207,7 +204,7 @@ curl -X 'POST' \
 
 the server returns the HTTP code `202`.
 
-Both endpoints enqueue the request to the internal queue. The service will process the request asynchronously. It can take a few seconds before the request is processed in the backend and the IP addresses are processed. To check the status of the request, use the User API endpoints [`/allowlist/*`](https://paris.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management). It's also possible to manage the reported IP addresses using the User API synchronously.
+Both endpoints enqueue the request to the internal queue. The service will process the request asynchronously. It can take a few seconds before the request is processed in the backend and the IP addresses are processed. To check the status of the request, use the User API endpoints [`/allowlist/*`](https://dublin.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management). It's also possible to manage the reported IP addresses using the User API synchronously.
 
 ## Global database and region allowlists
 
@@ -219,12 +216,12 @@ The Report API is deployed in different regions and each region can only be acce
 
 ## Downloading the reported IP addresses
 
-ThreatJammer is only a custody of your data, so you can download the reported IP addresses in JSON, CSV or [AWS WAF format](https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html) and import them in your own systems. The endpoints in the User API to download the reported IP addresses are [`/denylist/reported/ip`](https://paris.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management/query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_get) and [`/allowlist/cidr`](https://paris.api.threatjammer.com/docs#/Allowlist%20data%20query%20and%20management/query_all_the_ip_addresses_manually_entered_by_the_user_in_the_IP_addresses_allowlist_v1_allowlist_cidr_get).
+ThreatJammer is only a custody of your data, so you can download the reported IP addresses in JSON, CSV or [AWS WAF format](https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html) and import them in your own systems. The endpoints in the User API to download the reported IP addresses are [`/denylist/reported/ip`](https://dublin.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management/query_all_the_ip_addresses_reported_by_the_user_v1_denylist_reported_ip_get) and [`/allowlist/cidr`](https://dublin.api.threatjammer.com/docs#/Allowlist%20data%20query%20and%20management/query_all_the_ip_addresses_manually_entered_by_the_user_in_the_IP_addresses_allowlist_v1_allowlist_cidr_get).
 
 
 ## What's next
 
-We recommend starting testing our API in the [Live Test site](https://paris.report.threatjammer.com/docs) first, and then read some of the [Tutorials available](/tutorials) in our site to get a better understanding of all the capabilities of the service.
+We recommend starting testing our API in the [Live Test site](https://dublin.report.threatjammer.com/docs) first, and then read some of the [Tutorials available](/tutorials) in our site to get a better understanding of all the capabilities of the service.
 
 Visiting the [community site](/community) is also an excellent place to ask for help, or our [support services](/support)
 

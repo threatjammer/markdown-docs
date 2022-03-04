@@ -31,7 +31,7 @@ The website can perform a risk assessment without being registered. When a user 
 ![Threat Jammer Anonymous Risk Assessment](/docsimg/risk-assessment-anonymous.png)
 
 ### Risk score
-The information returned by the risk assessment is the same as the information returned by the endpoints of the User API [Data Assessment](https://paris.api.threatjammer.com/docs#/Data%20assesment). The guage chart will display the risk score of the IP address in the range of 0 to 100. A human readable score is calculated by the following formula: 
+The information returned by the risk assessment is the same as the information returned by the endpoints of the User API [Data Assessment](https://dublin.api.threatjammer.com/docs#/Data%20assesment). The guage chart will display the risk score of the IP address in the range of 0 to 100. A human readable score is calculated by the following formula: 
 
 | Range | Risk level |
 |-------|------------|
@@ -83,12 +83,12 @@ The main difference between a registered and anonymous search is the details dis
 ![Threat Jammer Registered Risk Assessment](/docsimg/risk-assessment-registered.png)
 
 ### Ban an IP address
-A registered user can ban an IP address clicking on the **Report this IP** button. When a user bans an IP address, it will be included in the private list of reported or banned IP addresses of the user. In the [Report API](/docs/introduction-threat-jammer-report-api), the endpoints [`/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post) and [`/unban/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post) let users ban and unban IP addresses. The management of the banned IP addresses is done in the [User API](/docs/introduction-threat-jammer-user-api) with the endpoints [`/denylist/reported/ip/*`](https://paris.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management). 
+A registered user can ban an IP address clicking on the **Report this IP** button. When a user bans an IP address, it will be included in the private list of reported or banned IP addresses of the user. In the [Report API](/docs/introduction-threat-jammer-report-api), the endpoints [`/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post) and [`/unban/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post) let users ban and unban IP addresses. The management of the banned IP addresses is done in the [User API](/docs/introduction-threat-jammer-user-api) with the endpoints [`/denylist/reported/ip/*`](https://dublin.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management). 
 
 A banned IP address will score a risk level of `High` and will bypass any other risk assessment tests. By default, an IP address banned from the website will be in the `Banned` status for the next 24 hours.
 
 ### Report a False Positive
-A registered user can report a False Positive IP address clicking on the **False Positive** button. When a user reports a False Positive IP address, it will be included in the private allowlist of addresses of the user. In the [Report API](/docs/introduction-threat-jammer-report-api), the endpoints [`/false/add/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/add_ip_addresses_to_the_false_positive_database_v1_false_add_ip_post) and [`/false/remove/ip`](http://paris.report.threatjammer.com/docs#/Endpoints/remove_ip_addresses_from_the_false_positive_database_v1_false_remove_ip_post), users can create custom allowlists for false positives IP addresses automatically. 
+A registered user can report a False Positive IP address clicking on the **False Positive** button. When a user reports a False Positive IP address, it will be included in the private allowlist of addresses of the user. In the [Report API](/docs/introduction-threat-jammer-report-api), the endpoints [`/false/add/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/add_ip_addresses_to_the_false_positive_database_v1_false_add_ip_post) and [`/false/remove/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/remove_ip_addresses_from_the_false_positive_database_v1_false_remove_ip_post), users can create custom allowlists for false positives IP addresses automatically. 
 
 A False Positive IP address will score a risk level of `Low` and will shortcut any other risk assessment tests. By default, a False Positive IP address from the website will be in the `Allowlist` status for the next 24 hours.
 
@@ -108,7 +108,7 @@ The `Deny Datasets` tab contains information about the type of abuse committed b
 
 A `green` shields means the IP address was not identifed as a threat of the dataset. A `red` shield means the IP address was identified as a threat.
 
-The [User API](/docs/introduction-threat-jammer-user-api) has the endpoint group [Platform Datasets](https://paris.api.threatjammer.com/docs#/Platform%20datasets) with different ways to extract more information about the dataset and the IP address.
+The [User API](/docs/introduction-threat-jammer-user-api) has the endpoint group [Platform Datasets](https://dublin.api.threatjammer.com/docs#/Platform%20datasets) with different ways to extract more information about the dataset and the IP address.
 
 #### Deny Sources
 
@@ -130,7 +130,7 @@ At the right side of the source description there is a red icon displaying the t
 | `180D` | Last 180 days |
 | `365D` | Last 365 days |
 
-The [User API](/docs/introduction-threat-jammer-user-api) has the endpoint group [Data sources](https://paris.api.threatjammer.com/docs#/Data%20sources) with different methods to extract more details about the source and the IP address.
+The [User API](/docs/introduction-threat-jammer-user-api) has the endpoint group [Data sources](https://dublin.api.threatjammer.com/docs#/Data%20sources) with different methods to extract more details about the source and the IP address.
 
 #### Historical Data
 

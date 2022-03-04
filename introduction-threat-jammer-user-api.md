@@ -27,22 +27,20 @@ The User API can run in multiple geographical places called **regions**. A regio
 
 | FQDN | Region | Provider| Enabled? |
 |------|--------|---------|----------|
-| `nuremberg.api.threatjammer.com` | Nuremberg | Hetzner TESTING | Yes |
-| `paris.api.threatjammer.com` | Paris | Amazon Web Services | Yes |
-| `virginia.api.threatjammer.com` | Virginia | Amazon Web Services | No |
-| `california.api.threatjammer.com` | California | Amazon Web Services | No |
+| `dublin.api.threatjammer.com` | Dublin | AWS | Yes |
+
 
 These regions are **Public**. It means a developer-only needs to obtain an API key when signing up and using the service. **Private Regions** are only available on-demand to selected customers. Don't hesitate to get in touch with sales for more information.
 
 ## Credentials
 
-All the endpoints in the different regions only need a valid API key for the specific region. **The API keys are region-specific**. If a developer tries to use an API key of the `paris.api.threatjammer.com` region in the `virginia.api.threatjammer.com` region or vice versa, it will return an error. Please create a region-specific API key suitable to your needs.
+All the endpoints in the different regions only need a valid API key for the specific region. **The API keys are region-specific**. If a developer tries to use an API key of the `dublin.api.threatjammer.com` region in the `virginia.api.threatjammer.com` region or vice versa, it will return an error. Please create a region-specific API key suitable to your needs.
 
 To learn more about the Authentication with the Bearer tokens, please read the previous chapter [Threat Jammer API keys](/docs/threat-jammer-api-keys).
 
 ## The Live Test page
 
-All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.api.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Paris, the URL is [https://paris.api.threatjammer.com/docs](https://paris.api.threatjammer.com/docs).
+All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.api.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Paris, the URL is [https://dublin.api.threatjammer.com/docs](https://dublin.api.threatjammer.com/docs).
 
 The Threat Jammer site also has a direct access from the dropdown menu:
 
@@ -78,11 +76,11 @@ All the User API endpoints will need the following pieces of information to buil
 7. The requests with `GET` and `DELETE` verbs will have parameters in the Querystring.
 8. The requests with `POST` and `PUT` verbs will include the parameters as a JSON object in the request's body.
  
-Example: Read the ASN information of Google in the region of `Paris` with the API version `v1`. The endpoint is `/asn/{number}` with a `GET` verb. The [full detail of the endpoint is in the documentation of the Live Test site](https://paris.api.threatjammer.com/docs#/Autonomous%20Systems%20information/query_asn_v1_asn__number__get).
+Example: Read the ASN information of Google in the region of `Paris` with the API version `v1`. The endpoint is `/asn/{number}` with a `GET` verb. The [full detail of the endpoint is in the documentation of the Live Test site](https://dublin.api.threatjammer.com/docs#/Autonomous%20Systems%20information/query_asn_v1_asn__number__get).
 
 ```
 curl -X 'GET' \
-  'https://paris.api.threatjammer.com/v1/asn/15169' \
+  'https://dublin.api.threatjammer.com/v1/asn/15169' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer YOUR_API_KEY'
 ```
@@ -139,18 +137,18 @@ The number of different endpoints available in the User API are constantly growi
 
 ### Data assesment
 
-[The Data assessment endpoints](https://paris.api.threatjammer.com/docs#/Data%20assesment) in this group answer the following questions:
+[The Data assessment endpoints](https://dublin.api.threatjammer.com/docs#/Data%20assesment) in this group answer the following questions:
 
 > How risky is a resource and why?
 
 The different endpoints process the resources and return the highest risk found in why a specific test is relevant. 
 
-**Example:** [Get the risk score and the different factors of an IP address](https://paris.api.threatjammer.com/docs#/Data%20assesment/assess_ip_v1_asses_ip__ip_address__get).
+**Example:** [Get the risk score and the different factors of an IP address](https://dublin.api.threatjammer.com/docs#/Data%20assesment/assess_ip_v1_asses_ip__ip_address__get).
 
 From the command-line:
 ```bash
 curl -X 'GET' \
-  'https://paris.api.threatjammer.com/v1/asses/ip/212.231.12.22' \
+  'https://dublin.api.threatjammer.com/v1/asses/ip/212.231.12.22' \
   -H 'accept: application/json' \
   -H 'Authorization: Bearer tja_ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'
 ```
@@ -206,7 +204,7 @@ There are endpoints that allow batch processing of the resources posting a large
 
 ### Data logging
 
-[The Data logging endpoints](https://paris.api.threatjammer.com/docs#/Data%20logging) in this group give insights about when a resource appeared in the database or when it left the database. 
+[The Data logging endpoints](https://dublin.api.threatjammer.com/docs#/Data%20logging) in this group give insights about when a resource appeared in the database or when it left the database. 
 
 This list of changes is an influential factor in the risk score calculation. It's also a piece of valuable information in threat intel, forensics, and data analysis.
 
@@ -214,12 +212,12 @@ Datasets can filter the information returned by the endpoint and the first date 
 
 ### Autonomous System information
 
-[The Autonomous System information endpoints](https://paris.api.threatjammer.com/docs#/Autonomous%20Systems%20information) has information about the prefixes of the internet AS providers plus a pre-calculated risk score based on the activity of the networks and the frequency of report of the IP addresses in suspicious activities.
+[The Autonomous System information endpoints](https://dublin.api.threatjammer.com/docs#/Autonomous%20Systems%20information) has information about the prefixes of the internet AS providers plus a pre-calculated risk score based on the activity of the networks and the frequency of report of the IP addresses in suspicious activities.
 
 The AS has a risk and score pre-calculated, and each IPv4 and IPv6 prefix found have also a pre-calculated risk and score for a fine-grained assessment.
 
 ### Datacenter Information
-[The Datacenter information endpoints](https://paris.api.threatjammer.com/docs#/Datacenter%20information) have information about datacenter-only networks ranges and their owners. Following the AS approach, it also has a pre-calculated risk score based on the activity of the networks and the frequency of reports of the IP addresses in suspicious activities. 
+[The Datacenter information endpoints](https://dublin.api.threatjammer.com/docs#/Datacenter%20information) have information about datacenter-only networks ranges and their owners. Following the AS approach, it also has a pre-calculated risk score based on the activity of the networks and the frequency of reports of the IP addresses in suspicious activities. 
 
 The Datacenter has risks and scores pre-calculated, and each IPv4 and IPv6 network found has a pre-calculated risk and score for a fine-grained assessment. 
 
@@ -227,7 +225,7 @@ AS and Datacenter endpoints can look the same but are not the same. Sometimes th
 
 ### Platform datasets
 
-[The Platform datasets endpoints](https://paris.api.threatjammer.com/docs#/Platform%20datasets) is a superset of different sources of data that Threat Jammer classify by the type of suspicious activity they perform. Examples of Platform Datasets are:
+[The Platform datasets endpoints](https://dublin.api.threatjammer.com/docs#/Platform%20datasets) is a superset of different sources of data that Threat Jammer classify by the type of suspicious activity they perform. Examples of Platform Datasets are:
 
 | Platform datasets | Description |
 | ------------------- | ------ |
@@ -241,7 +239,7 @@ AS and Datacenter endpoints can look the same but are not the same. Sometimes th
 
 ### Data sources
 
-[The Data sources endpoints](https://paris.api.threatjammer.com/docs#/Data%20sources) return information about OSINT or CSINT denylists that Threat Jammer uses to calculate the risk and score in the assessment processes.
+[The Data sources endpoints](https://dublin.api.threatjammer.com/docs#/Data%20sources) return information about OSINT or CSINT denylists that Threat Jammer uses to calculate the risk and score in the assessment processes.
 
 Threat Jammer picks several relevant time frames for each Data source depending on how frequently the data changes. It can range from 1 hour to 365 days. A Data source with a 1-hour time range will contain the resources found in the last hour. A Data source with 365 days time range will include the resources found in the last 365 days. The time ranges are:
 
@@ -266,7 +264,7 @@ Other relevant information about the Data sources are:
 
 ### Denylist data query and management
 
-[Denylist data query and management](https://paris.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management) lets users manage their private denylists of resources. **The Assessment Engine will classify the resource with the maximum risk and score if there is a match during the assessment process. Maximium risk.** 
+[Denylist data query and management](https://dublin.api.threatjammer.com/docs#/Denylist%20data%20query%20and%20management) lets users manage their private denylists of resources. **The Assessment Engine will classify the resource with the maximum risk and score if there is a match during the assessment process. Maximium risk.** 
 
 There are two different sets of features:
 
@@ -279,7 +277,7 @@ Thanks to the Private denylist IP query and data management, a user can insert, 
 
 ### Allowlist data query and management
 
-[Allowlist data query and management](https://paris.api.threatjammer.com/docs#/Allowlist%20data%20query%20and%20management) lets users manage their private allowlist of resources. **The Assessment Engine will classify the resource with the lowest risk and score if there is a match during the assessment process. All the assessment processes will stop if the resource is in the whitelist discarding any other factors.**
+[Allowlist data query and management](https://dublin.api.threatjammer.com/docs#/Allowlist%20data%20query%20and%20management) lets users manage their private allowlist of resources. **The Assessment Engine will classify the resource with the lowest risk and score if there is a match during the assessment process. All the assessment processes will stop if the resource is in the whitelist discarding any other factors.**
 
 A user can insert, update, delete or retrieve any IP address using the API. 
 
@@ -295,12 +293,12 @@ Thanks to this feature, a company could bypass any kind of assessment of the tra
 
 ### Geolocation
 
-[Geolocation](https://paris.api.threatjammer.com/docs#/Geolocation) lets users obtain an accurate location of an IP address. It also allows batch processing or CVS file upload.
+[Geolocation](https://dublin.api.threatjammer.com/docs#/Geolocation) lets users obtain an accurate location of an IP address. It also allows batch processing or CVS file upload.
 
 
 ## What's next
 
-We recommend starting testing our API in the [Live Test site](https://paris.api.threatjammer.com/docs) first, and then read some of the [Tutorials available](/tutorials) in our site to get a better understanding of all the capabilities of the service.
+We recommend starting testing our API in the [Live Test site](https://dublin.api.threatjammer.com/docs) first, and then read some of the [Tutorials available](/tutorials) in our site to get a better understanding of all the capabilities of the service.
 
 Visiting the [community site](/community) is also an excellent place to ask for help, or our [support services](/support)
 
