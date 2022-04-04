@@ -2,8 +2,8 @@
 title: 'Threat Jammer website'
 excerpt: 'The Threat Jammer site is a web application that allows anyone to query resources and manage some basic features.'
 coverImage: ''
-created: '2021-01-12'
-updated: '2021-02-24'
+created: '2022-01-12'
+updated: '2022-02-24'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/threat-jammer-site.md

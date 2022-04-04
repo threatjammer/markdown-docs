@@ -2,8 +2,8 @@
 title: 'User Guides'
 excerpt: 'These guides explain how to use Threat Jammer and sleash its potential.'
 coverImage: ''
-created: '2021-01-12'
-updated: '2021-01-12'
+created: '2022-01-12'
+updated: '2022-01-12'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/index.md

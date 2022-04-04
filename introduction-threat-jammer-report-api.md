@@ -2,8 +2,8 @@
 title: 'Introduction to Threat Jammer Report API'
 excerpt: 'Developers can use the Report API to automate the reporting of malicious resources asynchronously.'
 coverImage: ''
-created: '2021-01-12'
-updated: '2021-02-23'
+created: '2022-01-12'
+updated: '2022-02-23'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-report-api.md

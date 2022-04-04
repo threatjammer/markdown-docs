@@ -2,8 +2,8 @@
 title: 'How Threat Jammer works'
 excerpt: 'A high level description of the different services available.'
 coverImage: ''
-created: '2021-01-12'
-updated: '2021-01-12'
+created: '2022-01-12'
+updated: '2022-01-12'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/how-threat-jammer-works.md

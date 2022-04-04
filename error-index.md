@@ -2,8 +2,8 @@
 title: 'List of handled errors in the Report and User API'
 excerpt: 'This list covers all the handled errors when using the different API available, in alphabetical order.'
 coverImage: ''
-created: '2021-01-12'
-updated: '2021-01-12'
+created: '2022-01-12'
+updated: '2022-01-12'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/error-index.md

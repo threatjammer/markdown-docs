@@ -2,8 +2,8 @@
 title: '404 Resource Not Found - List Type Not Found Error'
 excerpt: ''
 coverImage: ''
-created: '2021-01-12'
-updated: '2021-01-12'
+created: '2022-01-12'
+updated: '2022-01-12'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/error-list-type-not-found.md

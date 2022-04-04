@@ -2,8 +2,8 @@
 title: 'Threat Jammer API keys'
 excerpt: 'The API Keys are the authorization method to access the service.'
 coverImage: ''
-created: '2021-01-12'
-updated: '2021-02-10'
+created: '2022-01-12'
+updated: '2022-02-10'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/threat-jammer-api-keys.md
@@ -55,7 +55,7 @@ Example:
       567890123456789012345678901234567890 -> payload
 ```
 
-The API key follows the [token convention defined by Github](https://github.blog/2021-04-05-behind-githubs-new-authentication-token-formats) for its tokens. The rationale to adopt this format is to help the automated safeguards in Github to identify them if somebody publishes in a public repository by mistake.
+The API key follows the [token convention defined by Github](https://github.blog/2022-04-05-behind-githubs-new-authentication-token-formats) for its tokens. The rationale to adopt this format is to help the automated safeguards in Github to identify them if somebody publishes in a public repository by mistake.
 
 
 ## The quotas
