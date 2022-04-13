@@ -3,7 +3,7 @@ title: 'Introduction to Threat Jammer User API'
 excerpt: 'Developers can use the User API interact with the different databases, heuristics and machine learning processes.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-02-22'
+updated: '2022-04-13'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-user-api.md
@@ -271,7 +271,7 @@ There are two different sets of features:
 1. Reported IP quey and data management
 2. Private denylist IP query and data management
 
-A user can only insert into the Reported IP addresses storage from the [Report API](/docs/introduction-threat-jammer-report-api.md). The Report API design allows fast asynchronous communication from external devices like Honeypots, CDNs with serverless functions, and other threat detection agents that need to publish the information in a non-blocking way. A user can manage these resources with this endpoint.
+A user can only insert into the Reported IP addresses storage from the [Report API](/docs/introduction-threat-jammer-report-api). The Report API design allows fast asynchronous communication from external devices like Honeypots, CDNs with serverless functions, and other threat detection agents that need to publish the information in a non-blocking way. A user can manage these resources with this endpoint.
 
 Thanks to the Private denylist IP query and data management, a user can insert, update, delete or retrieve any IP address using the API. Threat Jammer will handle this set differently from the Reported IP addresses.
 
