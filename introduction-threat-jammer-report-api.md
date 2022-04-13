@@ -3,7 +3,7 @@ title: 'Introduction to Threat Jammer Report API'
 excerpt: 'Developers can use the Report API to automate the reporting of malicious resources asynchronously.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-02-23'
+updated: '2022-04-13'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-report-api.md
@@ -109,7 +109,7 @@ The number of different endpoints available in the Reporting API is smaller than
 
 The endpoints [`/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post) and [`/unban/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post) are used to ban/unban IP addresses. 
 
-When a honeypot like [Cowrie](/tutorials/how-to-configure-cowrie-in-ubuntu) or a service like [Fail2Ban](/tutorials/how-to-configure-fail2ban-in-ubuntu) detects a set of malicious IP addresses they can report them thanks to the Report API. The ThreatJammer assessment engine will automatically ban the IP addresses with the Time to Live (TTL) passed as argument **only for the user reporting the IP**. The TTL expires, the service will automatically unban the IP addresses. If more users report the same IP address, the ThreatJammer assessment engine will move the IP address to a public `ban` list called `COMMUNITY_REPORTED_LIST`. 
+When a honeypot like **Cowrie** or a service like [Fail2Ban](/tutorials/how-to-configure-fail2ban-in-ubuntu) detects a set of malicious IP addresses they can report them thanks to the Report API. The ThreatJammer assessment engine will automatically ban the IP addresses with the Time to Live (TTL) passed as argument **only for the user reporting the IP**. The TTL expires, the service will automatically unban the IP addresses. If more users report the same IP address, the ThreatJammer assessment engine will move the IP address to a public `ban` list called `COMMUNITY_REPORTED_LIST`. 
 
 A developer can also unban IP addresses by using the endpoint [`/unban/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post). This endpoint sets the TTL to `0` forcing an immediate expiration of the IP addresss.
 
