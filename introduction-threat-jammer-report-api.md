@@ -3,7 +3,7 @@ title: 'Introduction to Threat Jammer Report API'
 excerpt: 'Developers can use the Report API to automate the reporting of malicious resources asynchronously.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-04-13'
+updated: '2022-05-31'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-report-api.md
@@ -39,7 +39,7 @@ To learn more about the Authentication with the Bearer tokens, please read the c
 
 ## The Live Test page
 
-All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.report.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Paris, the URL is [https://dublin.report.threatjammer.com/docs](https://dublin.report.threatjammer.com/docs).
+All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.report.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Dublin, the URL is [https://dublin.report.threatjammer.com/docs](https://dublin.report.threatjammer.com/docs).
 
 ## API version
 
@@ -67,7 +67,7 @@ All the Report API endpoints will need the following pieces of information to bu
 6. The endpoint with the desired service.
 7. The requests will include the parameters as a JSON object in the request's body. No query parameters are required.
  
-Example: Report the IP version 4 `6.7.8.9` as malicious and ban it for 24 hours in `Paris` region with the API version `v1`. The endpoint is `/ip` with a `POST` verb. The [full detail of the endpoint is in the documentation of the Live Test site](http://dublin.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post).
+Example: Report the IP version 4 `6.7.8.9` as malicious and ban it for 24 hours in `Dublin` region with the API version `v1`. The endpoint is `/ip` with a `POST` verb. The [full detail of the endpoint is in the documentation of the Live Test site](http://dublin.report.threatjammer.com/docs#/Endpoints/push_ip_address_v1_ip_post).
 
 ```
 curl -X 'POST' \
@@ -114,7 +114,7 @@ When a honeypot like **Cowrie** or a service like [Fail2Ban](/tutorials/how-to-c
 A developer can also unban IP addresses by using the endpoint [`/unban/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/unban_ip_address_v1_unban_ip_post). This endpoint sets the TTL to `0` forcing an immediate expiration of the IP addresss.
 
 
-**Example:** To ban the IP addresses `6.7.8.9` and `7.8.9.10` for 24 hours (`86400` seconds) in `Paris` region tagging them of type `ABUSE` and tagging them as `DOCSAMPLE`:
+**Example:** To ban the IP addresses `6.7.8.9` and `7.8.9.10` for 24 hours (`86400` seconds) in `Dublin` region tagging them of type `ABUSE` and tagging them as `DOCSAMPLE`:
 
 From the command-line:
 ```bash
@@ -135,7 +135,7 @@ curl -X 'POST' \
 
 the server returns the HTTP code `202`.
 
-**Example:** To unban the IP addresses `6.7.8.9` and `7.8.9.10` in `Paris` region:
+**Example:** To unban the IP addresses `6.7.8.9` and `7.8.9.10` in `Dublin` region:
 
 From the command-line:
 ```bash
@@ -165,7 +165,7 @@ When a user reports a False Positive the service will automatically add it to th
 A developer can also remove an IP addresses of the allowlist by using the endpoint [`/false/remove/ip`](http://dublin.report.threatjammer.com/docs#/Endpoints/remove_ip_addresses_from_the_false_positive_database_v1_false_remove_ip_post). This endpoint sets the TTL to `0` forcing an immediate expiration of the IP addresss.
 
 
-**Example:** To report as a false positive the IP address `8.8.8.8` for 24 hours (`86400` seconds) in `Paris` region tagging them of type `ABUSE` and tagging them as `DOCSAMPLE`:
+**Example:** To report as a false positive the IP address `8.8.8.8` for 24 hours (`86400` seconds) in `Dublin` region tagging them of type `ABUSE` and tagging them as `DOCSAMPLE`:
 
 From the command-line:
 ```bash
@@ -186,7 +186,7 @@ curl -X 'POST' \
 
 the server returns the HTTP code `202`.
 
-**Example:** To delete the IP address `8.8.8.8` in `Paris` region of the private allowlist:
+**Example:** To delete the IP address `8.8.8.8` in `Dublin` region of the private allowlist:
 
 From the command-line:
 ```bash
@@ -208,7 +208,7 @@ Both endpoints enqueue the request to the internal queue. The service will proce
 
 ## Global database and region allowlists
 
-The Report API is deployed in different regions and each region can only be accessed by a user with a specific regional API key. A regional API will report IP addresses to the global allowlist and denylist no matter the region. A user with an API key in Paris and Virginia will be able to read the IP addresses reported by each other. 
+The Report API is deployed in different regions and each region can only be accessed by a user with a specific regional API key. A regional API will report IP addresses to the global allowlist and denylist no matter the region. A user with an API key in Dublin and Virginia will be able to read the IP addresses reported by each other. 
 
 ## Understanding the Report API quotas
 

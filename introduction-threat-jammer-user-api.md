@@ -3,7 +3,7 @@ title: 'Introduction to Threat Jammer User API'
 excerpt: 'Developers can use the User API interact with the different databases, heuristics and machine learning processes.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-04-13'
+updated: '2022-05-31'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-user-api.md
@@ -40,7 +40,7 @@ To learn more about the Authentication with the Bearer tokens, please read the p
 
 ## The Live Test page
 
-All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.api.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Paris, the URL is [https://dublin.api.threatjammer.com/docs](https://dublin.api.threatjammer.com/docs).
+All the endpoints have a Live Test page where developers can test all the different endpoints available. The URI is `/docs` and the full URL is `https://REGION.api.threatjammer.com`. For example, if a developer wants to open the Live Test Page in Dublin, the URL is [https://dublin.api.threatjammer.com/docs](https://dublin.api.threatjammer.com/docs).
 
 The Threat Jammer site also has a direct access from the dropdown menu:
 
@@ -76,7 +76,7 @@ All the User API endpoints will need the following pieces of information to buil
 7. The requests with `GET` and `DELETE` verbs will have parameters in the Querystring.
 8. The requests with `POST` and `PUT` verbs will include the parameters as a JSON object in the request's body.
  
-Example: Read the ASN information of Google in the region of `Paris` with the API version `v1`. The endpoint is `/asn/{number}` with a `GET` verb. The [full detail of the endpoint is in the documentation of the Live Test site](https://dublin.api.threatjammer.com/docs#/Autonomous%20Systems%20information/query_asn_v1_asn__number__get).
+Example: Read the ASN information of Google in the region of `Dublin` with the API version `v1`. The endpoint is `/asn/{number}` with a `GET` verb. The [full detail of the endpoint is in the documentation of the Live Test site](https://dublin.api.threatjammer.com/docs#/Autonomous%20Systems%20information/query_asn_v1_asn__number__get).
 
 ```
 curl -X 'GET' \

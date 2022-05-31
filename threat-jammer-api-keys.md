@@ -3,7 +3,7 @@ title: 'Threat Jammer API keys'
 excerpt: 'The API Keys are the authorization method to access the service.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-02-10'
+updated: '2022-05-31'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/threat-jammer-api-keys.md
@@ -23,7 +23,7 @@ Threat Jammer supports two end-user REST APIs: the User API and the Report API. 
 
 ## How to create a token
 
-The current version of Threat Jammer supports only one API key per user in the only existing region in [Paris](https://dublin.api.threatjammer.com). When a user register in Threat Jammer, he will automatically receive an *API Key*. The Threat Jammer site has a page with all the information about the *API Keys*:
+The current version of Threat Jammer supports only one API key per user in the only existing region in [Dublin](https://dublin.api.threatjammer.com). When a user register in Threat Jammer, he will automatically receive an *API Key*. The Threat Jammer site has a page with all the information about the *API Keys*:
 
 > [`https://threatjammer.com/keys`](https://threatjammer.com/keys)
 
