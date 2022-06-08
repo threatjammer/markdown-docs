@@ -3,7 +3,7 @@ title: 'Threat Jammer API keys'
 excerpt: 'The API Keys are the authorization method to access the service.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-05-31'
+updated: '2022-06-08'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/threat-jammer-api-keys.md
@@ -31,7 +31,7 @@ This page is only available for users who have registered in Threat Jammer. **So
 
 ![Threat Jammer API Key menu](/docsimg/api-keys-menu.png)
 
-After the signup, the user will enjoy 30 days of trial. After that, the user can opt for a paid plan. The paid plan is available on the [Threat Jammer plans page](https://threatjammer.com/plans). If not, Threat Jammer will downgrade the user to the free plan. It's possible to upgrade to a paid plan at any time.
+After the signup, the user will enjoy of all the capabilities of the product during the Beta period. After that, the user can opt for paid plans. The paid plans will be available at the end of the Beta stage of the product. 
   
 ## The API key format
 
@@ -55,7 +55,7 @@ Example:
       567890123456789012345678901234567890 -> payload
 ```
 
-The API key follows the [token convention defined by Github](https://github.blog/2022-04-05-behind-githubs-new-authentication-token-formats) for its tokens. The rationale to adopt this format is to help the automated safeguards in Github to identify them if somebody publishes in a public repository by mistake.
+The API key follows the [token convention defined by Github](https://github.blog/2021-04-05-behind-githubs-new-authentication-token-formats) for its tokens. The rationale to adopt this format is to help the automated safeguards in Github to identify them if somebody publishes in a public repository by mistake.
 
 
 ## The quotas

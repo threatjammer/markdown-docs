@@ -3,7 +3,7 @@ title: 'Introduction to Threat Jammer Report API'
 excerpt: 'Developers can use the Report API to automate the reporting of malicious resources asynchronously.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-05-31'
+updated: '2022-06-08'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/introduction-threat-jammer-report-api.md
@@ -223,7 +223,7 @@ ThreatJammer is only a custody of your data, so you can download the reported IP
 
 We recommend starting testing our API in the [Live Test site](https://dublin.report.threatjammer.com/docs) first, and then read some of the [Tutorials available](/tutorials) in our site to get a better understanding of all the capabilities of the service.
 
-Visiting the [community site](/community) is also an excellent place to ask for help, or our [support services](/support)
+Visiting the [community site](/community) is also an excellent place to ask for help, or our support services.
 
 
 

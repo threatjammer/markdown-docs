@@ -3,7 +3,7 @@ title: 'Threat Jammer website'
 excerpt: 'The Threat Jammer site is a web application that allows anyone to query resources and manage some basic features.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-02-24'
+updated: '2022-06-08'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/threat-jammer-site.md
@@ -218,7 +218,7 @@ The [Quickstart page](/quickstart) is the page a user see the first time they lo
 
 ### The Login page
 
-The user will stay permanently logged in until they log out or not active for 3 days. Regardless of the activity, the users will be forced to login after 30 days. The user can log out by clicking on the [`Logout`](/api/logout) button in the top menu.
+The user will stay permanently logged in until they log out or not active for 3 days. Regardless of the activity, the users will be forced to login after 30 days. The user can log out by clicking on the [`Logout`](/api/auth/logout) button in the top menu.
 
 
 ## Profile account

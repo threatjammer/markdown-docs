@@ -3,7 +3,7 @@ title: 'What is a Threat Jammer?'
 excerpt: 'A short introduction to the Threat Jammer service.'
 coverImage: ''
 created: '2022-01-12'
-updated: '2022-01-12'
+updated: '2022-06-08'
 readTime: 2
 navigation:
   github: https://github.com/threatjammer/markdown-docs/blob/main/what-is-threat-jammer.md
@@ -21,7 +21,7 @@ ogImage:
 
 [ThreatJammer.com](https://threatjammer.com) is a service that allows developers, security engineers, and other IT professionals to access high-quality threat intelligence data from a variety of sources and integrate it into their applications with the sole purpose of detecting and blocking malicious activity.
 
-The preferred way to access these threat intelligence data is through the [Threat Jammer REST API](https://threatjammer.com/api/). The API is a RESTful API that allows anybody to consume different threat intelligence sources easily and securely. Threat Jammer guarantees the highest level of data accuracy and freshness.
+The preferred way to access these threat intelligence data is through the [Threat Jammer User REST API](/docs/introduction-threat-jammer-user-api). The API is a RESTful API that allows anybody to consume different threat intelligence sources easily and securely. Threat Jammer guarantees the highest level of data accuracy and freshness.
 
 ## The abuse detection problem
 
