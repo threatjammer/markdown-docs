@@ -23,7 +23,7 @@ Threat Jammer supports two end-user REST APIs: the User API and the Report API. 
 
 ## How to create a token
 
-The current version of Threat Jammer supports only one API key per user in the only existing region in [Dublin](https://dublin.api.threatjammer.com). When a user register in Threat Jammer, he will automatically receive an *API Key*. The Threat Jammer site has a page with all the information about the *API Keys*:
+The current version of Threat Jammer supports only one API key per user in the only existing region in [Dublin](https://dublin.api.threatjammer.com/docs). When a user register in Threat Jammer, he will automatically receive an *API Key*. The Threat Jammer site has a page with all the information about the *API Keys*:
 
 > [`https://threatjammer.com/keys`](https://threatjammer.com/keys)
 
